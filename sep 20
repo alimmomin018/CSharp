@@ -1,1 +1,64 @@
+using System;
+
+namespace CSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+            MainApplication mainApplication = new MainApplication();
+            Console.WriteLine();
+            Console.ReadLine();
+        }
+
+        public class MainApplication
+        {
+            public MainApplication()
+            {
+                Tiger tiger = new Tiger("Csharp");
+                Lion lion = new Lion("Java");
+                Console.WriteLine("{0}'s running speed is {1}", tiger.Name, tiger.run());
+                Console.WriteLine("{0}'s running speed is {1}", lion.Name, lion.run());
+            }
+            public string competition()
+            {
+
+                return "";
+            }
+        }
+
+        class Tiger
+        {
+            public string Name;
+            public int run()
+            {
+                int runningSpeed;
+                Random rand = new Random();
+                runningSpeed = rand.Next(1, 100);
+                return runningSpeed;
+            }
+            public Tiger(string aName)
+            {
+                this.Name = aName;
+            }
+        }
+
+        class Lion
+        {
+            public string Name;
+            public int run()
+            {
+                int runningSpeed;
+                Random rand = new Random();
+                runningSpeed = rand.Next(1, 100);
+                return runningSpeed;
+            }
+            public Lion(string aName)
+            {
+                this.Name = aName;
+            }
+        }
+    }
+}
 
