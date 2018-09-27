@@ -8,23 +8,28 @@ namespace CSharp
         {
             Console.WriteLine("Hello World!");
             MainApplication mainApplication = new MainApplication();
-            Console.WriteLine();
+            Console.WriteLine(mainApplication.competition());
             Console.ReadLine();
         }
 
-        public class MainApplication
+        class MainApplication
         {
             public MainApplication()
             {
-                Tiger tiger = new Tiger("Csharp");
-                Lion lion = new Lion("Java");
-                Console.WriteLine("{0}'s running speed is {1}", tiger.Name, tiger.run());
-                Console.WriteLine("{0}'s running speed is {1}", lion.Name, lion.run());
+            
             }
+
+            Tiger tiger = new Tiger("Csharp");
+            Lion lion = new Lion("Java");
+
             public string competition()
             {
-
-                return "";
+            if (tiger.run() > lion.run())
+            {
+                return "The winner is Csharp";
+            }
+            else
+                return "The winner is Java";
             }
         }
 
