@@ -1,0 +1,43 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        //private static int total = 0;
+
+        public static void Main(string[] args)
+        {
+            //int i = 0;
+            
+            //for (i = 9; i > 0; i--)
+            //{
+            //    sum = i + sum;
+            //}
+            //while(i < 10)
+            //{
+            //    sum = i + sum;
+            //    i++;
+            //}
+            //int numberAddition = NumberAddtion(9);
+            //Console.Write("Addtion is "+ numberAddition);
+            Console.ReadLine();
+        }
+
+        //public static int NumberAddtion(int num)
+        //{            
+        //    if(num <= 10 && num >= 0)
+        //    {
+        //        total = num + total;
+        //        num--;                
+        //        return NumberAddtion(num);
+        //    }
+        //    else
+        //        return total;
+        //}
+        
+    }
+}
