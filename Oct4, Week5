@@ -1,3 +1,10 @@
+/*
+string studentName = "Alim Momin";
+string studentNumber = "C0744374";
+int AssignmentNumber = 1;
+ */
+
+
 using System;
 
 namespace Assignment
