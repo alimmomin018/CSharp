@@ -1,0 +1,77 @@
+using System;
+
+namespace Assignment
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Hello hello = new Hello();
+            hello.Launch();
+            Console.ReadLine();
+        }
+    }
+    class Hello
+    {
+        public string myName = "C#";
+        int num1, num2;
+
+        private void SayHello()
+        {
+            Console.WriteLine("Hello, my name is "+ myName);
+        }
+
+        public void Launch()
+        {
+            this.SayHello();
+            this.GetUserInput();
+            if (this.ValidateInput())
+            {
+                Console.WriteLine("The sum is "+this.CalculateNumber());
+            }
+            else
+            {
+               // this.GetUserInput();
+                while (!ValidateInput())
+                {
+                    this.GetUserInput();
+                }
+                Console.WriteLine("The sum is "+this.CalculateNumber());
+            }
+        }        
+
+        private int CalculateNumber()
+        {
+            int intermediateValue = num1;
+            int sum = 0;
+
+            while(intermediateValue > num2)
+            {
+                sum += intermediateValue;
+                intermediateValue -= 3;
+            }
+            return sum;
+        }
+
+        private void GetUserInput()
+        {
+            //ask for 2 numbers and tell them first should be greater than second
+            Console.WriteLine("Give me 2 numbers: The first should be bigger than second");
+            Console.WriteLine("Enter the first Number: ");
+            num1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the second Number: ");
+            num2 = int.Parse(Console.ReadLine());
+            //show the entered values
+            Console.WriteLine("Your first number is {0} and second number is {1}", num1, num2);
+        }
+
+        private bool ValidateInput()
+        {
+            if(num1 > num2)
+            {
+                return true;
+            }else
+                return false;
+        }   
+    }
+}
