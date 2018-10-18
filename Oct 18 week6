@@ -1,0 +1,107 @@
+using System;
+
+namespace CSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Library library = new Library();
+            library.Launch();
+            Console.ReadLine();
+        }
+    }
+
+    class Library
+    {
+        public void Launch()
+        {
+            this.CreateBook();
+            Console.WriteLine(this.HowManyBooks());
+            this.CreateBorrower();
+            Console.WriteLine(this.HowManyBorrower());
+        }
+
+        private void CreateBook()
+        {
+            Book book1 = new Book("war and peace", "solisintinchin","82823","fiction");
+            Book book2 = new Book("X-Men", "Logan", "85678", "Sci - fiction");
+            Book book3 = new Book("Hungar Games", "Morgan", "93245", "Adventure");
+        }
+
+        private int HowManyBooks()
+        {
+            return Book.ReportOnHowManyBooks();
+        }
+
+        private void CreateBorrower()
+        {
+            Borrower borrower1 = new Borrower("Alim", "987654321");
+            Borrower borrower2 = new Borrower("Hope", "542168900", "35869879809");
+        }
+
+        private int HowManyBorrower()
+        {
+            
+            return Borrower.ReportOnHowManyBorrower();
+        }
+
+        private void LoanOutBook( )
+        {
+            
+        }        
+    }
+
+    class Book
+    {
+        private static int howManyBooks = 0;
+        private string title;
+        private string author;
+        private string isbnNumber;
+        private string genre;
+        
+        //create constructor: A constructure is always public
+        public Book(string aTitle, string anAuthor, string anISBNNumber, string aGenre)
+        {
+            this.title = aTitle;
+            this.author = anAuthor;
+            this.isbnNumber = anISBNNumber;
+            this.genre = aGenre;
+            howManyBooks++;
+        }
+
+        public static int ReportOnHowManyBooks()
+        {
+            return howManyBooks;
+        }
+    }
+
+    class Borrower
+    {
+        private static int howManyBorrower = 0;
+        private string borrowerName;
+        private string cellphone;
+        private string libraryCardNumber;
+
+        public Borrower(string bName, string cphone, string lcn)
+        {
+            howManyBorrower++;
+            this.borrowerName = bName;
+            this.cellphone = cphone;
+            this.libraryCardNumber = lcn;
+        }
+
+        public Borrower(string bName, string cphone)
+        {
+            howManyBorrower++;
+            this.borrowerName = bName;
+            this.cellphone = cphone;
+        }
+
+        public static int ReportOnHowManyBorrower()
+        {
+            return howManyBorrower;
+        }
+    }
+    
+}
